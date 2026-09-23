@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
@@ -347,7 +347,10 @@ void main() {
     await tester.tap(find.text('Open sheet'));
     await tester.pumpAndSettle();
 
-    final ColoredBox coloredBox = tester.widget(find.byType(ColoredBox));
+    final ColoredBox coloredBox = tester.widget(find.descendant(
+      of: find.byType(ModalBarrier),
+      matching: find.byType(ColoredBox),
+    ));
     expect(coloredBox.color, barrierColor);
   });
 
@@ -359,7 +362,10 @@ void main() {
     await tester.tap(find.text('Open sheet'));
     await tester.pumpAndSettle();
 
-    final ColoredBox coloredBox = tester.widget(find.byType(ColoredBox));
+    final ColoredBox coloredBox = tester.widget(find.descendant(
+      of: find.byType(ModalBarrier),
+      matching: find.byType(ColoredBox),
+    ));
     expect(coloredBox.color, barrierColor);
   });
 }

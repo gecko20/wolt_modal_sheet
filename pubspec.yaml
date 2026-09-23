@@ -32,11 +32,13 @@ screenshots:
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
-  flutter: ">=3.16.0"
+  flutter: ">=3.47.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.4.0
+  cupertino_ui: ^1.1.1
 
 flutter:
   uses-material-design: true

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wolt_modal_sheet/src/widgets/wolt_navigation_toolbar.dart';
 
@@ -32,12 +32,16 @@ void main() {
         ),
       );
 
-      final Size leadingSize = tester.getSize(find.ancestor(
-          of: find.byIcon(leadingIcon), matching: find.byType(ColoredBox)));
+      final Size leadingSize = tester.getSize(find
+          .ancestor(
+              of: find.byIcon(leadingIcon), matching: find.byType(ColoredBox))
+          .first);
       expect(leadingSize, const Size.square(iconSize));
 
-      final Size trailingSize = tester.getSize(find.ancestor(
-          of: find.byIcon(trailingIcon), matching: find.byType(ColoredBox)));
+      final Size trailingSize = tester.getSize(find
+          .ancestor(
+              of: find.byIcon(trailingIcon), matching: find.byType(ColoredBox))
+          .first);
       expect(trailingSize, const Size.square(iconSize));
     },
   );

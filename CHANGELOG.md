@@ -1,3 +1,14 @@
+## Unreleased (material_ui fork)
+- Migrate from the Flutter SDK's `package:flutter/material.dart` and `package:flutter/cupertino.dart` to the standalone [`material_ui`](https://pub.dev/packages/material_ui) (`^1.4.0`) and [`cupertino_ui`](https://pub.dev/packages/cupertino_ui) (`^1.1.1`) packages.
+  - **Breaking:** requires Flutter 3.47.0 or later. Apps using `wolt_modal_sheet` must use `material_ui` as well; the public API (`WoltModalSheetThemeData`, `ThemeData`, `ShapeBorder`, …) now refers to the `material_ui` types.
+  - `MaterialUiCompatibilityBridge` is no longer needed around the modal sheet.
+  - Fixes, in apps built with `material_ui`:
+    - "No MaterialLocalizations found" when a modal is opened.
+    - "No Material widget found" for `material_ui` widgets (e.g. `TextField`, buttons) inside a modal, because the sheet wrapped its content in the SDK's `Material`.
+    - The modal ignoring the app's theme, including `ThemeExtension`s such as `WoltModalSheetThemeData`.
+    - Snackbars shown from inside a modal not being displayed in the modal's `Scaffold`.
+  - Adds a test that fails if `package:flutter/material.dart` or `package:flutter/cupertino.dart` is imported in `lib/`, `test/` or `example/`, and an equivalent CI check.
+  - Migrates the `example` app to `material_ui`, and its iOS project from CocoaPods to Swift Package Manager.
 ## 0.11.0
 - Fix WoltNavigationToolbar leading constraint. [#361](https://github.com/woltapp/wolt_modal_sheet/pull/351) by [TahaTesser](https://github.com/TahaTesser)
   - Fixes:

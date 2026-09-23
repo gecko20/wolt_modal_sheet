@@ -5,11 +5,12 @@ version: 0.1.0
 
 environment:
   sdk: '>=2.19.2 <4.0.0'
-  flutter: '>=3.16.0'
+  flutter: '>=3.47.0'
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: ^1.4.0
   wolt_modal_sheet:
     path: ..
 

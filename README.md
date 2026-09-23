@@ -1,3 +1,21 @@
+> [!NOTE]
+> **This is a `material_ui` fork of `wolt_modal_sheet`.**
+> It uses the standalone [`material_ui`](https://pub.dev/packages/material_ui) and
+> [`cupertino_ui`](https://pub.dev/packages/cupertino_ui) packages instead of the Flutter SDK's
+> `package:flutter/material.dart` and `package:flutter/cupertino.dart`, so it works in apps that
+> have migrated to `material_ui`, without `MaterialUiCompatibilityBridge`. It requires
+> Flutter 3.47 or later, and is not meant for apps that still use the SDK's
+> `package:flutter/material.dart`. Depend on it via git:
+>
+> ```yaml
+> dependencies:
+>   wolt_modal_sheet:
+>     git:
+>       url: https://github.com/gecko20/wolt_modal_sheet.git
+> ```
+>
+> See the [CHANGELOG](CHANGELOG.md) for details.
+
 <p align="center">
     <a href="https://wolt.com/"><img src="https://img.shields.io/badge/Powered%20by-Wolt-blue.svg" alt="Wolt"></a>
     <a href="https://pub.dev/packages/wolt_modal_sheet/publisher"><img src="https://img.shields.io/pub/publisher/wolt_modal_sheet.svg" alt="Wolt on pub.dev"></a>
@@ -115,7 +133,7 @@ flutter pub add wolt_modal_sheet
 Afterwards, if you copy and paste following code to your `main.dart` file and run it, it will help you get started:
 
 ```dart
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 void main() {
